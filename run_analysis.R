@@ -54,6 +54,8 @@ values <- gsub('^t', 'time', values)
 values <- gsub('Acc', 'acceleration', values)
 values <- gsub('[-]','', values)
 values <- tolower(values)
+activitylabel[["activity"]] <- tolower(activitylabel[["activity"]])
+activitylabel[["activity"]] <- gsub('_', '', activitylabel[["activity"]])
 
 ## remove the extra columns from the data tables
 traindt <- traindt[, features, with=FALSE]
